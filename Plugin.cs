@@ -14,7 +14,7 @@ namespace ErenshorSwingSync
     {
         public const string PluginGuid = "com.blackhorse311.erenshor.swingsync";
         public const string PluginName = "Erenshor SwingSync";
-        public const string PluginVersion = "1.1.0";
+        public const string PluginVersion = "1.1.1";
 
         internal static ManualLogSource Log;
         internal static ConfigEntry<bool> Enabled;
@@ -144,6 +144,24 @@ namespace ErenshorSwingSync
 
         internal static void ScheduleNpcImpact(NPC npc, int baseDamage, bool isOffhand)
         {
+            // NPC.Combat() gates its attack round on GetMH/OHAtkDelay() <= 0, and vanilla resets
+            // those timers inside PerformMeleeHit, which we are deferring. Without a provisional
+            // reset here, Combat() fires a fresh attack round EVERY FRAME of the defer window
+            // (the v1.1.0 "grass spider machine gun" bug). Set the timer now; the deferred
+            // original applies the real reset at impact and NpcImpact backdates it to keep
+            // cadence exactly vanilla.
+            Stats stats = _npcStatsRef(npc);
+            if (stats != null)
+            {
+                if (isOffhand)
+                {
+                    _ohAtkDelayRef(stats) = Mathf.Max(stats.CurrentOHAtkDelay, 1f);
+                }
+                else
+                {
+                    _mhAtkDelayRef(stats) = Mathf.Max(stats.CurrentMHAtkDelay, 1f);
+                }
+            }
             npc.StartCoroutine(NpcImpact(npc, baseDamage, isOffhand));
         }
 

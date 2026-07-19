@@ -2,7 +2,7 @@
 
 > **Your hits land when your blade does.** Removes the classic-MMO "server said you hit it half a second before your character swung" disconnect from Erenshor melee combat.
 
-![Version](https://img.shields.io/badge/version-1.1.0-blue)
+![Version](https://img.shields.io/badge/version-1.1.1-blue)
 ![BepInEx](https://img.shields.io/badge/BepInEx-5.4.23%2B-green)
 ![Game](https://img.shields.io/badge/Erenshor-Steam-orange)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
@@ -141,6 +141,9 @@ The build references `Assembly-CSharp.dll` and BepInEx assemblies from your game
 ---
 
 ## 📜 Changelog
+
+### 1.1.1
+- Fixed NPCs attacking many times per second during the sync window (the "grass spider machine gun"). Their attack-round timer is now set the moment their swing starts, exactly like vanilla
 
 ### 1.1.0
 - NPCs and SimPlayers now sync their swings too, their hits on you land with their animations
