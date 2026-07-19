@@ -7,6 +7,8 @@
 ![Game](https://img.shields.io/badge/Erenshor-Steam-orange)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
+📦 **Get it:** [Nexus Mods](https://www.nexusmods.com/erenshor/mods/14) · [GitHub Releases](https://github.com/Blackhorse311/ErenshorSwingSync/releases)
+
 ---
 
 ## ⏱️ 30 Seconds to Understand
@@ -48,7 +50,7 @@ Same damage, same DPS, same attack speed. Only the *feedback timing* moves.
 ## 🚀 Quick Start
 
 1. Install [BepInEx 5.4.23+](https://github.com/BepInEx/BepInEx/releases) (64-bit) into your Erenshor folder
-2. Download `ErenshorSwingSync.zip` from [Releases](https://github.com/Blackhorse311/ErenshorSwingSync/releases)
+2. Download the mod from [Nexus Mods](https://www.nexusmods.com/erenshor/mods/14) or [Releases](https://github.com/Blackhorse311/ErenshorSwingSync/releases)
 3. Extract into your Erenshor folder so it looks like this:
 
 ```
