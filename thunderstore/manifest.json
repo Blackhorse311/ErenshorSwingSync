@@ -1,0 +1,9 @@
+{
+  "name": "ErenshorSwingSync",
+  "version_number": "1.1.1",
+  "website_url": "https://github.com/Blackhorse311/ErenshorSwingSync",
+  "description": "Melee hits land when the swing animation connects, for you and for mobs. No more damage numbers before the blade moves. Zero DPS changes.",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2305"
+  ]
+}
